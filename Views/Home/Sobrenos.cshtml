@@ -1,0 +1,198 @@
+﻿@{
+    ViewData["Title"] = "Página Sobrenos";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nós</title>
+
+    <!--Css/Google Fonts-->
+    <link rel="stylesheet" href="~/css/sobrenos.css" />
+    <link rel="stylesheet" href="~/css/global.css">
+    <link rel="stylesheet" href="~/css/sidebar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <partial name="_Sidebar" />
+
+    <div class="column">
+        <section class="sobre-nos">
+            <h1>Nossa Equipe</h1>
+            <div class="container">
+
+                <!-- Danilo -->
+                <div class="card">
+                    <img src="~/assets/sobrenos/fotodanilo.jpg" alt="Foto de Danilo Silva" />
+                    <h2>Danilo Silva</h2>
+                    <p class="profissao">Desenvolvedor Full-Stack em Formação</p>
+                    <p class="descricao">
+                        Estou cursando Desenvolvimento de Software Multiplataforma na FATEC.
+                        Sou Full-Stack em formação (Dart, JavaScript, React e C#). Combino
+                        design centrado no usuário com habilidade para organizar, planejar
+                        e coordenar projetos em equipe.
+                    </p>
+                    <div class="social">
+                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contribuicao">
+                        <div class="contribuicao-label">Contribuição ao projeto</div>
+                        <div class="barra-container">
+                            <div class="barra-progresso" style="width: 50%;"></div>
+                        </div>
+                        <div class="porcentagem-texto">50%</div>
+                    </div>
+                </div>
+
+                <!-- Henrique -->
+                <div class="card">
+                    <img src="~/assets/sobrenos/fotohenrique.jpg" alt="Foto de Henrique Tavares" />
+                    <h2>Henrique Tavares</h2>
+                    <p class="profissao">Desenvolvedor Front-End | Co-Fundador</p>
+                    <p class="descricao">
+                        Tenho 19 anos e sou desenvolvedor front-end, iniciando no back-end.
+                        No Pesque & Fale organizo os papéis da equipe e oriento meus parceiros,
+                        valorizando o trabalho em equipe e o impacto positivo da iniciativa.
+                    </p>
+                    <div class="social">
+                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contribuicao">
+                        <div class="contribuicao-label">Contribuição ao projeto</div>
+                        <div class="barra-container">
+                            <div class="barra-progresso" style="width: 30%;"></div>
+                        </div>
+                        <div class="porcentagem-texto">30%</div>
+                    </div>
+                </div>
+
+                <!-- Vinícius -->
+                <div class="card">
+                    <img src="~/assets/sobrenos/fotovinicius.jpg" alt="Foto de Vinícius Bovo" />
+                    <h2>Vinícius Bovo</h2>
+                    <p class="profissao">Desenvolvedor Front-End | Co-Fundador</p>
+                    <p class="descricao">
+                        Tenho 18 anos, sou desenvolvedor front-end e cofundador do Pesque & Fale.
+                        Criei a plataforma para incentivar a pesca em Matão-SP, organizando informações
+                        e promovendo inovação na área socioeconômica do lazer local.
+                    </p>
+                    <div class="social">
+                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contribuicao">
+                        <div class="contribuicao-label">Contribuição ao projeto</div>
+                        <div class="barra-container">
+                            <div class="barra-progresso" style="width: 13%;"></div>
+                        </div>
+                        <div class="porcentagem-texto">13%</div>
+                    </div>
+                </div>
+
+                <!-- Lucas -->
+                <div class="card">
+                    <img src="~/assets/sobrenos/fotolucas.jpg" alt="Foto de Lucas Catto" />
+                    <h2>Lucas Catto</h2>
+                    <p class="profissao">Desenvolvedor Front-End | Co-Fundador</p>
+                    <p class="descricao">
+                        Tenho 18 anos e sou desenvolvedor front-end. Sou cofundador do Pesque & Fale,
+                        um projeto que inova no mundo da pesca em Matão. Busco unir criatividade e
+                        tecnologia para gerar impacto positivo na comunidade.
+                    </p>
+                    <div class="social">
+                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contribuicao">
+                        <div class="contribuicao-label">Contribuição ao projeto</div>
+                        <div class="barra-container">
+                            <div class="barra-progresso" style="width: 4%;"></div>
+                        </div>
+                        <div class="porcentagem-texto">4%</div>
+                    </div>
+                </div>
+
+                <!-- João Pedro -->
+                <div class="card">
+                    <img src="~/assets/sobrenos/fotojoao.jpg" alt="Foto de João Pedro Ferreira" />
+                    <h2>João Pedro Ferreira</h2>
+                    <p class="profissao">Desenvolvedor Front-End | Co-Fundador</p>
+                    <p class="descricao">
+                        Tenho 18 anos e atuo como desenvolvedor front-end, sempre buscando criar
+                        experiências digitais funcionais e atrativas. Sou um dos idealizadores
+                        do projeto Pesque & Fale, trazendo inovação ao universo da pesca em Matão.
+                    </p>
+                    <div class="social">
+                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contribuicao">
+                        <div class="contribuicao-label">Contribuição ao projeto</div>
+                        <div class="barra-container">
+                            <div class="barra-progresso" style="width: 3%;"></div>
+                        </div>
+                        <div class="porcentagem-texto">3%</div>
+                    </div>
+                </div>
+
+                <!-- Rebeca -->
+                <div class="card">
+                    <img src="~/assets/sobrenos/fotorebeca.jpg" alt="Foto de Rebeca Scutare" />
+                    <h2>Rebeca Scutare</h2>
+                    <p class="profissao">Estudante de Desenvolvimento de Software</p>
+                    <p class="descricao">
+                        Tenho 18 anos e estudo na Fatec Matão. Sou aluna do curso de
+                        Desenvolvimento de Software Multiplataforma e atualmente estou
+                        no segundo semestre.
+                    </p>
+                    <div class="social">
+                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contribuicao">
+                        <div class="contribuicao-label">Contribuição ao projeto</div>
+                        <div class="barra-container">
+                            <div class="barra-progresso" style="width: 2%;"></div>
+                        </div>
+                        <div class="porcentagem-texto">2%</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-container">
+                <div>
+                    <h3>Sobre Nós</h3>
+                    <p>Grupo de estudantes dedicados ao desenvolvimento de iniciativas voltadas à melhoria do trabalho socioeconômico em Matão-SP e região.</p>
+                </div>
+                <div>
+                    <h3>Links Úteis</h3>
+                    <a asp-controller="Home" asp-action="Home">Página Inicial</a>
+                    <a asp-controller="Home" asp-action="Pesquisar">Pesquisa de Locais</a>
+                    <a asp-controller="Home" asp-action="MelhoresLocais">Melhores locais</a>
+                    <a asp-controller="Home" asp-action="Notificacao">Notificações</a>
+                    <a asp-controller="Home" asp-action="Sobrenos">Sobre nós</a>
+                    <a asp-controller="Usuario" asp-action="Perfil">Perfil</a>
+                </div>
+                <div>
+                    <h3>Contato</h3>
+                    <p>Email: pesquefale@gmail.com</p>
+                </div>
+            </div>
+            <p class="copyright">&copy; Pesque & Fale 2025 - Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="~/js/script.js"></script>
+    <script src="~/js/menu.js"></script>
+    <script src="~/js/notificacao.js" defer></script>
+</body>
+</html>

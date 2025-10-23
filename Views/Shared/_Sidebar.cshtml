@@ -1,0 +1,54 @@
+@{
+    var currentController = ViewContext.RouteData.Values["Controller"]?.ToString();
+    var currentAction = ViewContext.RouteData.Values["Action"]?.ToString();
+}
+<nav class="sidebar">
+    <div class="sidebar-header">
+        <img src="~/assets/logo/logo.jpg" alt="Pesque & Fale" class="logo" width="100" />
+        <h2 class="site-title"></h2>
+    </div>
+
+    <div class="nav-menu">
+        <a asp-controller="Home" asp-action="Home" class="nav-item @(currentAction == "Home" ? "active" : "")">
+            <span class="material-symbols-outlined">home</span>
+            <span class="nav-text">Página Inicial</span>
+        </a>
+
+        <a asp-controller="Home" asp-action="Pesquisar" class="nav-item @(currentAction == "Pesquisar" ? "active" : "")">
+            <span class="material-symbols-outlined">search</span>
+            <span class="nav-text">Pesquisa</span>
+        </a>
+
+        <a asp-controller="Home" asp-action="MelhoresLocais" class="nav-item @(currentAction == "MelhoresLocais" ? "active" : "")">
+            <span class="material-symbols-outlined">location_on</span>
+            <span class="nav-text">Melhores Locais</span>
+        </a>
+
+        <a asp-controller="Home" asp-action="Notificacao" class="nav-item @(currentAction == "Notificacao" ? "active" : "")">
+            <span class="material-symbols-outlined">
+                notifications
+                <span class="badge" id="contador">3</span>
+            </span>
+            <span class="nav-text">Notificações</span>
+        </a>
+
+        <a asp-controller="Home" asp-action="Sobrenos" class="nav-item @(currentAction == "Sobrenos" ? "active" : "")">
+            <span class="material-symbols-outlined">school</span>
+            <span class="nav-text">Sobre nós</span>
+        </a>
+
+        <a asp-controller="Usuario" asp-action="Perfil" class="nav-item @(currentController == "Usuario" && currentAction == "Perfil" ? "active" : "")">
+            <span class="material-symbols-outlined">person</span>
+            <span class="nav-text">Perfil</span>
+        </a>
+    </div>
+
+    <div class="sidebar-footer">
+        <div class="theme-toggle">
+            <button id="theme-btn" class="theme-btn">
+                <span class="material-symbols-outlined">dark_mode</span>
+                <span class="nav-text">Modo Escuro</span>
+            </button>
+        </div>
+    </div>
+</nav>
