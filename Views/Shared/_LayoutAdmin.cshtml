@@ -1,0 +1,82 @@
+@{
+    var tituloPagina = ViewData["Title"] ?? "Pesque & Fale - Admin";
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PESQUE & FALE ADMIN</title>
+
+    <!--Css do Site Principal (para manter o visual) -->
+    <link rel="stylesheet" href="~/css/global.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/sobrenos.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Adicionar Bootstrap para o CRUD -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Css Específico do Admin -->
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+    
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <!-- Navigation (Header do Site Principal) -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo-index">
+                <img src="~/assets/login/logo1.png" alt="Logo PESQUE & FALE">
+                <img src="~/assets/login/logo2.png" alt="Logo PESQUE & FALE 2">
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Voltar ao Site</a></li>
+                <li><a href="/admin">Painel</a></li>
+                <li><a href="/admin/Pescadores">CRUD Pescadores</a></li>
+            </ul>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Conteúdo da Página Admin -->
+    <div class="admin-content">
+        @RenderBody()
+    </div>
+
+    <!-- Footer do Site Principal -->
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h3>Sobre Nós</h3>
+                <p>Grupo de estudantes dedicados ao desenvolvimento de iniciativas voltadas à melhoria do trabalho socioeconômico em Matão-SP e região.</p>
+            </div>
+            <div>
+                <h3>Navegação</h3>
+                <a href="#home">Início</a>
+                <a href="#features">Recursos</a>
+                <a href="#about">Sobre</a>
+            </div>
+            <div>
+                <h3>Contato</h3>
+                <p>Email: pesquefale@gmail.com</p>
+                <span class="material-symbols-outlined"></span>
+            </div>
+        </div>
+        <p class="copyright">&copy; Pesque & Fale 2025 - Todos os direitos reservados.</p>
+    </footer>
+
+    <!--Script do Site Principal -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/index.js" asp-append-version="true"></script>
+    <script src="~/js/script.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
