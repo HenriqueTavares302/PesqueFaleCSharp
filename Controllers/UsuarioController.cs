@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+Ôªøusing Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace PesqueFaleCSharp.Controllers
@@ -32,7 +32,7 @@ namespace PesqueFaleCSharp.Controllers
         {
             if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
-                ModelState.AddModelError(string.Empty, "Email e senha s„o obrigatÛrios.");
+                ModelState.AddModelError(string.Empty, "Email e senha s√£o obrigat√≥rios.");
                 return View();
             }
 
@@ -59,11 +59,11 @@ namespace PesqueFaleCSharp.Controllers
                 string.IsNullOrWhiteSpace(email) ||
                 string.IsNullOrWhiteSpace(password))
             {
-                ModelState.AddModelError(string.Empty, "Todos os campos s„o obrigatÛrios.");
+                ModelState.AddModelError(string.Empty, "Todos os campos s√£o obrigat√≥rios.");
                 return View();
             }
 
-            // TODO: criar usu·rio no banco usando EF Core (injetar o DbContext aqui)
+            // TODO: criar usu√°rio no banco usando EF Core (injetar o DbContext aqui)
             _logger.LogInformation("Novo registro: {Email}", email);
 
             return RedirectToAction(nameof(Perfil));
@@ -78,7 +78,7 @@ namespace PesqueFaleCSharp.Controllers
         // GET: /Usuario/Logout
         public IActionResult Logout()
         {
-            // TODO: limpar sess„o/cookies/claims quando implementar autenticaÁ„o
+            // TODO: limpar sess√£o/cookies/claims quando implementar autentica√ß√£o
             return RedirectToAction(nameof(Login));
         }
     }

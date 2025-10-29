@@ -1,0 +1,92 @@
+@model IEnumerable<PesqueFaleCSharp.Models.Pescador>
+
+@{
+    ViewData["Title"] = "Gerenciar Pescadores";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link rel="stylesheet" href="~/css/admin.css" />
+
+<div class="container-fluid admin-content px-5 py-4" style="max-width:100%;">
+
+    <!-- Cabeçalho amplo: título à esquerda, botão à direita -->
+    <header class="row align-items-center mb-4">
+        <div class="col-12 col-lg-8">
+            <h1 class="pescadores-title mb-1" style="font-size:2.4rem;">@ViewData["Title"]</h1>
+            <p class="text-muted mb-0" style="max-width:1000px;">
+                Liste e gerencie os pescadores. Use o botão ao lado para adicionar um novo registro.
+            </p>
+        </div>
+
+        <div class="col-12 col-lg-4 text-lg-end mt-3 mt-lg-0">
+            <a asp-action="Create" class="btn-new-fisher btn-lg" role="button" aria-label="Adicionar novo pescador">+ Novo Pescador</a>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal ocupando a largura (card/table full-width) -->
+    <section class="row">
+        <div class="col-12">
+            <div class="card shadow-sm border-0" style="width:100%;">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-crud mb-0" style="min-width:720px;">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th style="width:40%;">@Html.DisplayNameFor(model => model.nome)</th>
+                                    <th style="width:40%;">@Html.DisplayNameFor(model => model.email)</th>
+                                    <th class="text-center" style="width:20%;">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null && Model.Any())
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td data-label="@Html.DisplayNameFor(model => model.nome)">
+                                                <div style="font-weight:600;">@Html.DisplayFor(modelItem => item.nome)</div>
+                                            </td>
+                                            <td data-label="@Html.DisplayNameFor(model => model.email)">
+                                                <a href="mailto:@item.email" class="text-decoration-underline">@Html.DisplayFor(modelItem => item.email)</a>
+                                            </td>
+                                            <td class="text-center align-middle">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a asp-action="Edit" asp-route-id="@item.id_pescador" class="btn btn-sm btn-edit" title="Editar">Editar</a>
+                                                    <a asp-action="Delete" asp-route-id="@item.id_pescador" class="btn btn-sm btn-delete" title="Excluir">Excluir</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="3" class="text-center text-muted py-5">
+                                            Nenhum pescador cadastrado ainda.
+                                            <div class="mt-3">
+                                                <a asp-action="Create" class="btn-new-fisher">+ Adicionar primeiro pescador</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@section Scripts {
+    <script>
+        // Confirmação leve ao excluir
+        document.addEventListener('click', function (e) {
+            var el = e.target;
+            if (el.matches('a.btn-delete') || el.closest('a.btn-delete')) {
+                if (!confirm('Confirma exclusão do registro?')) {
+                    e.preventDefault();
+                }
+            }
+        });
+    </script>
+}

@@ -3,55 +3,47 @@ using PesqueFaleCSharp.Models;
 
 namespace PesqueFaleCSharp.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class AppDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-        }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        public DbSet<Usuario> Usuarios { get; set; } = null!;
-        public DbSet<Local> Locais { get; set; } = null!;
-        public DbSet<Publicacao> Publicacoes { get; set; } = null!;
-        public DbSet<Comentario> Comentarios { get; set; } = null!;
+        public DbSet<Pescador> Pescadores { get; set; }
+        public DbSet<Publicacao> Publicacoes { get; set; }
+        public DbSet<Comentario> Comentarios { get; set; }
+        public DbSet<Local> Locais { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            // �ndices e configura��es simples
-            modelBuilder.Entity<Usuario>()
-                .HasIndex(u => u.Email)
-                .IsUnique();
-
-            modelBuilder.Entity<Usuario>()
-                .HasIndex(u => u.Username)
-                .IsUnique();
-
-            // Relacionamentos
-            modelBuilder.Entity<Publicacao>()
-                .HasOne(p => p.Usuario)
-                .WithMany(u => u.Publicacoes)
-                .HasForeignKey(p => p.UsuarioId)
-                .OnDelete(DeleteBehavior.Cascade);
-
+            // Relacionamento: Local -> Publicações (1:N)
             modelBuilder.Entity<Publicacao>()
                 .HasOne(p => p.Local)
                 .WithMany(l => l.Publicacoes)
                 .HasForeignKey(p => p.LocalId)
                 .OnDelete(DeleteBehavior.SetNull);
 
+            // Relacionamento: Pescador -> Publicações (1:N)
+            modelBuilder.Entity<Publicacao>()
+                .HasOne<Pescador>()
+                .WithMany()
+                .HasForeignKey(p => p.UsuarioId) // agora representa o PescadorId
+              .OnDelete(DeleteBehavior.NoAction); // mantém cascade aqui (opcional)
+
+            // Relacionamento: Publicação -> Comentários (1:N)
             modelBuilder.Entity<Comentario>()
                 .HasOne(c => c.Publicacao)
                 .WithMany(p => p.Comentarios)
                 .HasForeignKey(c => c.PublicacaoId)
-                .OnDelete(DeleteBehavior.Cascade);
+                 .OnDelete(DeleteBehavior.NoAction);
 
+            // Relacionamento: Pescador -> Comentários (1:N)
             modelBuilder.Entity<Comentario>()
-                .HasOne(c => c.Usuario)
-                .WithMany(u => u.Comentarios)
-                .HasForeignKey(c => c.UsuarioId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasOne<Pescador>()
+                .WithMany()
+                .HasForeignKey(c => c.UsuarioId) // agora representa o PescadorId
+                // Alterado para evitar múltiplos caminhos em cascade
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

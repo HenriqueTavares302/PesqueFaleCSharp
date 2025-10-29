@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Pesque & Fale - Painel Admin";
+    Layout = "_LayoutAdmin"; // Vamos criar este layout no próximo passo
+}
+<link rel="stylesheet" href="~/css/admin.css" />
+
+<div class="container admin-area">
+    <div class="card admin-card">
+        <div class="card-body">
+            <h1 class="h3 text-center mb-3">Painel de Administração</h1>
+            <p class="text-center text-muted mb-4">Bem-vindo ao painel de administração do Pesque & Fale.</p>
+
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="card border-0">
+                        <div class="card-body text-center">
+                            <h5 class="admin-card-title">Gerenciar Pescadores</h5>
+                            <p class="admin-card-sub">Crie, edite e exclua registros de pescadores.</p>
+                            <div class="admin-actions">
+                                <a href="/admin/Pescadores" class="btn btn-primary btn-lg">Acessar CRUD</a>
+                                <a href="/admin/Pescadores/Create" class="btn btn-outline-secondary btn-lg">Novo Pescador</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Outras opções de gerenciamento viriam aqui -->
+            </div>
+        </div>
+    </div>
+</div>

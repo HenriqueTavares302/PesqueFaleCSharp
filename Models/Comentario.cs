@@ -21,6 +21,6 @@ namespace PesqueFaleCSharp.Models
 
         // Navegação
         public Publicacao Publicacao { get; set; } = null!;
-        public Usuario Usuario { get; set; } = null!;
+        public Pescador Usuario { get; set; } = null!;
     }
 }
