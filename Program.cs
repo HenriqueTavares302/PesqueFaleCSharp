@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PesqueFaleCSharp.Data; // Ajuste se seu contexto estiver em outro namespace
+using Microsoft.EntityFrameworkCore.SqlServer;
 
 namespace PesqueFaleCSharp
 {
@@ -10,8 +11,8 @@ namespace PesqueFaleCSharp
             var builder = WebApplication.CreateBuilder(args);
 
             // ?? Adiciona o contexto do banco de dados (SQL Server, MySQL, etc.)
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddDbContext<AppDbContext>(options =>
+       options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -31,6 +32,10 @@ namespace PesqueFaleCSharp
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.MapControllerRoute(
+                name: "admin",
+                pattern: "admin/{controller=Admin}/{action=Index}/{id?}");
 
             app.MapControllerRoute(
                 name: "default",

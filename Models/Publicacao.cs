@@ -27,7 +27,7 @@ namespace PesqueFaleCSharp.Models
         public int Curtidas { get; set; } = 0;
 
         // Navegação
-        public Usuario Usuario { get; set; } = null!;
+        public Pescador Usuario { get; set; } = null!;
         public Local? Local { get; set; }
         public ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
     }
