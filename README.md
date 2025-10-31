@@ -1,6 +1,6 @@
 # PESQUE & FALE
 
-[![](https://img.shields.io/badge/version-1.0-blue)](https://github.com/)
+[![](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/)
 [![](https://img.shields.io/badge/license-MIT-green)](LICENSE.md)
 
 ---
@@ -49,10 +49,10 @@ PESQUE & FALE nasce da necessidade de centralizar informações e experiências 
     <img src="https://skillicons.dev/icons?i=dotnet,cs" />
 </p>
 
-* **Banco de Dados:** 
+* **Banco de Dados:** SQL SERVER 
 
 <p align="center">
-<img src="Readme/Microsoft_SQL_Server_2025_icon.png" />
+<img src="Readme/Microsoft_SQL_Server_2025_icon.png" width="50" height="50" />
 </p>
 
 * **Frontend:** HTML, CSS, JavaScript
@@ -91,7 +91,7 @@ PesqueFaleCSharp/
 
 <p align="center">
     <img src="https://skillicons.dev/icons?i=dotnet,cs" />
-    <img src="Readme/Microsoft_SQL_Server_2025_icon.png" />
+    <img src="Readme/Microsoft_SQL_Server_2025_icon.png" width="50" height="50" />
 </p>
 
 
@@ -142,5 +142,5 @@ MIT — consulte o arquivo `LICENSE.md`.
 - [@Lucas](https://www.linkedin.com/in/lucas-catto-a66886372/)
 - [@João](https://www.linkedin.com/in/jo%C3%A3o-pedro-ferreira-montrezor-605b72349/)
 - [@Vinicius]()
-- [@Rebeca]()
+- [@Rebeca](https://www.instagram.com/scutarerebecadeoliveira?igsh=b3BwZmQ3NzB0eDdr)
 
